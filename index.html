@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de Préinscription</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Formulaire de Préinscription</h1>
+    <form id="preinscription-form">
+      <label for="session">À quelle session souhaitez-vous participer ?</label>
+      <select id="session" name="session">
+        <option value="session_lundi_mercredi">La session du lundi - mardi - mercredi</option>
+        <option value="session_jeudi_samedi">La session du jeudi - vendredi - samedi</option>
+      </select>
+
+      <div id="price-section">
+        <label>Choisissez votre prix :</label>
+        <input type="radio" id="prix_formation_seule" name="price" value="3000" checked>
+        <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
+        <input type="radio" id="prix_formation_attestation" name="price" value="5000">
+        <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
+      </div>
+
+      <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
+      <select id="payment" name="payment">
+        <option value="orange_money">Orange Money</option>
+        <option value="wave">Wave</option>
+        <option value="moov_money">Moov Money</option>
+        <option value="nita">Nita</option>
+        <option value="express_point">Express Point (Eco-bank)</option>
+      </select>
+
+      <button type="submit">Envoyer sur WhatsApp</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
