@@ -71,3 +71,11 @@ button:hover {
   padding: 10px;
   background-color: #f4f4f4;
 }
+
+/* Styles pour le logo */
+.logo {
+  max-width: 150px; /* Ajustez la largeur maximale selon vos besoins */
+  height: auto; /* Permet à la hauteur de s'ajuster automatiquement pour conserver les proportions */
+  float: left;
+  margin-right: 10px;
+}
