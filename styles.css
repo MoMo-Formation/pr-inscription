@@ -42,4 +42,5 @@ button:hover {
 .notification {
   color: red;
   font-style: italic;
+  margin-top: 10px; /* Ajout de l'espace entre le bouton et la notification */
 }
