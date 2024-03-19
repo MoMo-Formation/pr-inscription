@@ -19,11 +19,11 @@
       <div id="price-section">
         <label>Choisissez votre prix :</label><br>
         <div>
-          <input type="radio" id="prix_formation_seule" name="price" value="3000" checked>
+          <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked>
           <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
         </div>
         <div>
-          <input type="radio" id="prix_formation_attestation" name="price" value="5000">
+          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)">
           <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
         </div>
       </div>
@@ -37,13 +37,13 @@
         <option value="express_point">Express Point (Ecobank)</option>
       </select>
 
-      <label for="payment_address">Le paiement se fait sur :</label>
+      <label for="payment_address">Adresse du moyen de paiement :</label>
       <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
 
       <label for="payment_number">Numéro utilisé pour le paiement :</label>
       <input type="text" id="payment_number" name="payment_number" placeholder="Numéro de téléphone">
 
-      <button type="submit" id="submit-btn">Envoyer sur WhatsApp</button>
+      <button type="button" id="submit-btn">Envoyer sur WhatsApp</button>
       <p id="notification" class="notification"><strong><em>Une capture d'écran de la confirmation du paiement est nécessaire pour valider l'inscription.</em></strong></p>
     </form>
   </div>
