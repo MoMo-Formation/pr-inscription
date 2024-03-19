@@ -20,7 +20,7 @@ label {
   font-weight: bold;
 }
 
-select, button {
+select, button, input[type=text] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -28,7 +28,7 @@ select, button {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #5cb85c;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -36,19 +36,10 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #4cae4c;
 }
 
-#price-section {
-  margin-bottom: 15px;
-}
-
-#price-section label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-#price-section div {
-  margin-bottom: 10px;
+.notification {
+  color: red;
+  font-style: italic;
 }
