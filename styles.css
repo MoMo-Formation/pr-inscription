@@ -48,6 +48,6 @@ button:hover {
 }
 
 .attestation img {
-  max-width: 33%;
+  max-width: 100%;
   height: auto;
 }
