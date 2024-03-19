@@ -1,42 +1,24 @@
-document.getElementById('preinscription-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  let session = document.getElementById('session').value;
-  let price = document.querySelector('input[name="price"]:checked').value;
-  let payment = document.getElementById('payment').value;
-  let paymentAddress = document.getElementById('payment_address').value;
-  let paymentNumber = document.getElementById('payment_number').value;
-  let message = `Préinscription à la session : ${session}\nChoix du prix : ${price}\nMoyen de paiement : ${payment}\nAdresse du moyen de paiement : ${paymentAddress}\nNuméro de téléphone pour le paiement : ${paymentNumber}`;
+document.addEventListener('DOMContentLoaded', function() {
+  // Chargement de l'adresse du moyen de paiement en fonction du choix initial
+  let initialPayment = document.getElementById('payment').value;
+  let initialAddress = getPaymentAddress(initialPayment);
+  document.getElementById('payment_address').value = initialAddress;
 
-  let encodedMessage = encodeURIComponent(message);
-  let whatsappLink = `https://wa.me/22601368949?text=${encodedMessage}`;
-  window.open(whatsappLink, '_blank');
-});
-
-// Affichage de l'adresse du moyen de paiement en fonction du choix du moyen de paiement
-document.getElementById('payment').addEventListener('change', function() {
-  let paymentAddress = document.getElementById('payment_address');
-  let payment = document.getElementById('payment').value;
-  let addressText = '';
-
-  switch (payment) {
-    case 'orange_money':
-      addressText = '+22657547436 (Wend Lassida Ismael Moise Compaore)';
-      break;
-    case 'wave':
-      addressText = '+22657547436';
-      break;
-    case 'moov_money':
-      addressText = '+22601368949';
-      break;
-    case 'nita':
-      addressText = 'Burkina Faso, Bobo-Dioulasso à Moïse Compaoré au +22657547436';
-      break;
-    case 'express_point':
-      addressText = 'Compaoré Moïse, +22657547436';
-      break;
-    default:
-      addressText = '';
+  // Fonction pour obtenir l'adresse du moyen de paiement en fonction du choix
+  function getPaymentAddress(paymentMethod) {
+    switch (paymentMethod) {
+      case 'orange_money':
+        return '+22657547436 (Wend Lassida Ismael Moise Compaore)';
+      case 'wave':
+        return '+22657547436';
+      case 'moov_money':
+        return '+22601368949';
+      case 'nita':
+        return 'Burkina Faso, Bobo-Dioulasso à Moïse Compaoré au +22657547436';
+      case 'express_point':
+        return 'Compaoré Moïse, +22657547436';
+      default:
+        return '';
+    }
   }
-
-  paymentAddress.value = addressText;
 });
