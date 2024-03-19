@@ -20,7 +20,9 @@ label {
   font-weight: bold;
 }
 
-select, input[type="text"], button {
+select,
+input[type="text"],
+button {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -43,4 +45,9 @@ button:hover {
   color: red;
   font-style: italic;
   text-align: center;
+}
+
+.attestation img {
+  max-width: 100%;
+  height: auto;
 }
