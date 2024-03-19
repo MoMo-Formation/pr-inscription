@@ -30,13 +30,14 @@
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
       <select id="payment" name="payment">
-        <option value="orange_money">Orange Money</option>
+        <option value="orange_money" selected>Orange Money</option>
         <option value="wave">Wave</option>
         <option value="moov_money">Moov Money</option>
         <option value="nita">Nita</option>
         <option value="express_point">Express Point (Ecobank)</option>
       </select>
 
+      <label for="payment_address">Adresse du moyen de paiement :</label>
       <input type="text" id="payment_address" name="payment_address" placeholder="Adresse du moyen de paiement" readonly>
 
       <label for="payment_number">Numéro utilisé pour le paiement :</label>
@@ -47,7 +48,6 @@
     </form>
   </div>
 
-  <!-- Assurez-vous que le chemin vers votre fichier JavaScript est correct -->
   <script src="script.js"></script>
 </body>
 </html>
