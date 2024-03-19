@@ -56,15 +56,7 @@ button:hover {
   margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
 }
 
-.formation-program h2 {
-  text-align: left;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding: 10px;
-  background-color: #f4f4f4;
-}
-
-.attestation-title {
+.formation-program h2, .attestation-title {
   text-align: left;
   margin-left: -20px;
   margin-right: -20px;
@@ -74,8 +66,8 @@ button:hover {
 
 /* Styles pour le logo */
 .logo {
-  max-width: 150px; /* Ajustez la largeur maximale selon vos besoins */
+  max-width: 100px; /* Ajustez la largeur maximale selon vos besoins */
   height: auto; /* Permet à la hauteur de s'ajuster automatiquement pour conserver les proportions */
   float: left;
   margin-right: 10px;
-  }
+}
