@@ -55,3 +55,39 @@ button:hover {
 #price-section {
   margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
 }
+
+.program-title {
+  text-align: left;
+  margin-left: 20px; /* Espace à gauche */
+  font-size: 20px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #007bff; /* Couleur du texte */
+}
+
+.attestation-title {
+  text-align: left;
+  margin-left: 20px; /* Espace à gauche */
+  font-size: 20px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #007bff; /* Couleur du texte */
+}
+
+.attestation {
+  margin-top: 50px; /* Espace au-dessus de l'image */
+}
+
+.scroll-top-btn {
+  position: fixed; /* Bouton position fixe */
+  bottom: 20px; /* Distance du bas de la fenêtre */
+  right: 20px; /* Distance du bord droit de la fenêtre */
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Bordure arrondie */
+  padding: 10px 20px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer */
+}
+
+.scroll-top-btn:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
