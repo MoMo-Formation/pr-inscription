@@ -45,6 +45,6 @@ button:hover {
   margin-top: 10px;
 }
 
-#payment {
-  margin-top: 20px; /* Ajoute une marge en haut */
+#price-section {
+  margin-bottom: 20px; /* Ajoute une marge en bas */
 }
