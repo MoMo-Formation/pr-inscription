@@ -10,40 +10,42 @@
   <div class="container">
     <h1>Formulaire de Préinscription</h1>
     <form id="preinscription-form">
-      <!-- Vos champs de formulaire ici -->
+      <label for="session">À quelle session souhaitez-vous participer ?</label>
+      <select id="session" name="session">
+        <option value="session_lundi_mercredi">La session du lundi - mardi - mercredi</option>
+        <option value="session_jeudi_samedi">La session du jeudi - vendredi - samedi</option>
+      </select>
+
+      <div id="price-section">
+        <label>Choisissez votre prix :</label><br>
+        <div>
+          <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked>
+          <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
+        </div>
+        <div>
+          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)">
+          <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
+        </div>
+      </div>
+
+      <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
+      <select id="payment" name="payment">
+        <option value="orange_money" selected>Orange Money</option>
+        <option value="wave">Wave</option>
+        <option value="moov_money">Moov Money</option>
+        <option value="nita">Nita</option>
+        <option value="express_point">Express Point (Ecobank)</option>
+      </select>
+
+      <label for="payment_address">Adresse du moyen de paiement :</label>
+      <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
+
+      <label for="payment_number">Numéro utilisé pour le paiement :</label>
+      <input type="text" id="payment_number" name="payment_number" placeholder="Numéro de téléphone">
+
       <button type="button" id="submit-btn">Envoyer sur WhatsApp</button>
       <p id="notification" class="notification"><strong><em>Une capture d'écran de la confirmation du paiement est nécessaire pour valider l'inscription.</em></strong></p>
     </form>
-
-    <!-- Programme de la formation -->
-    <div class="formation-program">
-      <h2>Programme de la formation</h2>
-      <p>
-        <strong>Jour 1 : Introduction à la Transformation des Fruits</strong><br>
-        - 🕒 20h00 : Accueil et Présentation<br>
-        - 🍎 Session 1 : Les Fondamentaux des Jus de Fruits<br>
-        - 🍇 Session 2 : Techniques d'Extraction et de Mélange<br>
-        - 🌳 Session 3 : Conservation des Fruits et Jus<br><br>
-
-        <strong>Jour 2 : Approfondissement des Techniques</strong><br>
-        - 🕒 20h00 : Session Récapitulative<br>
-        - 🍓 Session 4 : Confitures et Sirops<br>
-        - 🍊 Session 5 : Vinification de Fruits<br>
-        - 🍏 Session 6 : Techniques Avancées de Conservation<br><br>
-
-        <strong>Jour 3: Focus sur les Produits Laitiers</strong><br>
-        - 🕒 20h00 : Session Interactive<br>
-        - 🥛 Session 7 : Fabrication de Yaourts et Dèguè<br>
-        - 🍦 Session 8 : Gapal et Autres Produits Laitiers<br>
-        - 🌽 Session 9 : Conservation des Légumes et Jus de Légumes<br><br>
-
-        <strong>Conclusion et Remise des Attestations</strong><br>
-        - ⁉️ Questions et Réponses<br>
-        - 📜 Remise virtuelle des attestations<br><br>
-
-        Rejoignez-nous pour trois jours d'apprentissage intensif ! 🌱✨ Pour toute question ou ajustement, n'hésitez pas à nous contacter.
-      </p>
-    </div>
   </div>
 
   <script src="script.js"></script>
