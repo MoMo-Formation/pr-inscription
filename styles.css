@@ -20,31 +20,27 @@ label {
   font-weight: bold;
 }
 
-select, button, input[type=text] {
-  display: block;
+select, input[type="text"], button {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 button {
-  background-color: #5cb85c;
-  color: #fff;
+  background-color: #5cb85c; /* Vert */
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #4cae4c;
+  background-color: #45a049;
 }
 
 .notification {
   color: red;
   font-style: italic;
-  margin-top: 10px;
-}
-
-#price-section {
-  margin-bottom: 20px; /* Ajoute une marge en bas */
+  text-align: center;
 }
