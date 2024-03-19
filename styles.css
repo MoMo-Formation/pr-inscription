@@ -51,3 +51,7 @@ button:hover {
   max-width: 100%;
   height: auto;
 }
+
+#price-section {
+  margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
+}
