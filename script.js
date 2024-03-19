@@ -9,13 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var price = document.querySelector('input[name="price"]:checked').value;
     var payment = document.getElementById('payment').value;
     var paymentNumber = document.getElementById('payment_number').value;
+    var paymentAddress = document.getElementById('payment_address').value;
 
     // Construire le message WhatsApp avec toutes les réponses et l'adresse du moyen de paiement
     var whatsappMessage = '*Session choisie* :\n' + session +
                           '\n\n*Prix choisi* :\n' + price +
                           '\n\n*Mode de paiement* :\n' + payment +
                           '\n\n*Numéro de paiement* :\n' + paymentNumber +
-                          '\n\n*Adresse du moyen de paiement* :\n' + document.getElementById('payment_address').value;
+                          '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
 
     // Construire le lien WhatsApp avec le message
     var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
