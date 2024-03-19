@@ -13,12 +13,20 @@ document.getElementById('preinscription-form').addEventListener('submit', functi
   // Affichage de la notification spécifique au moyen de paiement
   let paymentNotification = document.getElementById('payment-notification');
   if (payment === 'orange_money' || payment === 'wave') {
-    paymentNotification.innerHTML = '<strong><em>Le paiement se fait sur le +22657547436</em></strong>';
+    if (paymentNotification) {
+      paymentNotification.innerHTML = '<strong><em>Le paiement se fait sur le +22657547436</em></strong>';
+    }
   } else if (payment === 'nita') {
-    paymentNotification.innerHTML = '<strong><em>Le paiement se fait au Burkina Faso, dans la ville de Bobo-Dioulasso, au nom de Compaoré Moïse sur le +22657547436</em></strong>';
+    if (paymentNotification) {
+      paymentNotification.innerHTML = '<strong><em>Le paiement se fait au Burkina Faso, dans la ville de Bobo-Dioulasso, au nom de Compaoré Moïse sur le +22657547436</em></strong>';
+    }
   } else if (payment === 'moov_money') {
-    paymentNotification.innerHTML = '<strong><em>Le paiement se fait sur le +22601368949</em></strong>';
+    if (paymentNotification) {
+      paymentNotification.innerHTML = '<strong><em>Le paiement se fait sur le +22601368949</em></strong>';
+    }
   } else if (payment === 'express_point') {
-    paymentNotification.innerHTML = '<strong><em>Le paiement se fait au nom de Compaoré Moïse (veuillez m\'envoyer le code de retrait sur WhatsApp)</em></strong>';
+    if (paymentNotification) {
+      paymentNotification.innerHTML = '<strong><em>Le paiement se fait au nom de Compaoré Moïse (veuillez m\'envoyer le code de retrait sur WhatsApp)</em></strong>';
+    }
   }
 });
