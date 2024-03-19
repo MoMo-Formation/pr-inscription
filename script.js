@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Chargement de l'adresse du moyen de paiement en fonction du choix initial
-  let initialPayment = document.getElementById('payment').value;
-  let initialAddress = getPaymentAddress(initialPayment);
-  document.getElementById('payment_address').value = initialAddress;
+  // Fonction pour charger l'adresse du moyen de paiement par défaut
+  function loadDefaultPaymentAddress() {
+    let initialPayment = document.getElementById('payment').value;
+    let initialAddress = getPaymentAddress(initialPayment);
+    document.getElementById('payment_address').value = initialAddress;
+  }
 
   // Fonction pour obtenir l'adresse du moyen de paiement en fonction du choix
   function getPaymentAddress(paymentMethod) {
@@ -21,4 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return '';
     }
   }
+
+  // Charger l'adresse du moyen de paiement par défaut lors du chargement de la page
+  loadDefaultPaymentAddress();
 });
