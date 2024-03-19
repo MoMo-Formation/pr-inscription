@@ -1,29 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Fonction pour charger l'adresse du moyen de paiement par défaut
-  function loadDefaultPaymentAddress() {
-    let initialPayment = document.getElementById('payment').value;
-    let initialAddress = getPaymentAddress(initialPayment);
-    document.getElementById('payment_address').value = initialAddress;
-  }
+  // Identifier le bouton WhatsApp
+  var whatsappBtn = document.getElementById('submit-btn');
 
-  // Fonction pour obtenir l'adresse du moyen de paiement en fonction du choix
-  function getPaymentAddress(paymentMethod) {
-    switch (paymentMethod) {
-      case 'orange_money':
-        return '+22657547436 (Wend Lassida Ismael Moise Compaore)';
-      case 'wave':
-        return '+22657547436';
-      case 'moov_money':
-        return '+22601368949';
-      case 'nita':
-        return 'Burkina Faso, Bobo-Dioulasso à Moïse Compaoré au +22657547436';
-      case 'express_point':
-        return 'Compaoré Moïse, +22657547436';
-      default:
-        return '';
-    }
-  }
+  // Ajouter un écouteur d'événements au clic sur le bouton
+  whatsappBtn.addEventListener('click', function() {
+    // Récupérer les valeurs des champs de formulaire
+    var session = document.getElementById('session').value;
+    var price = document.querySelector('input[name="price"]:checked').value;
+    var payment = document.getElementById('payment').value;
+    var paymentNumber = document.getElementById('payment_number').value;
 
-  // Charger l'adresse du moyen de paiement par défaut lors du chargement de la page
-  loadDefaultPaymentAddress();
+    // Construire le lien WhatsApp avec les réponses appropriées
+    var whatsappLink = 'https://wa.me/22601368949?text=*Session%20choisie*%3A%20' + encodeURIComponent(session) +
+                       '%0A*Prix%20choisi*%3A%20' + encodeURIComponent(price) +
+                       '%0A*Mode%20de%20paiement*%3A%20' + encodeURIComponent(payment) +
+                       '%0A*Num%C3%A9ro%20de%20paiement*%3A%20' + encodeURIComponent(paymentNumber);
+
+    // Ouvrir le lien WhatsApp dans une nouvelle fenêtre
+    window.open(whatsappLink);
+  });
 });
