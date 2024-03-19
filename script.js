@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var payment = document.getElementById('payment').value;
     var paymentNumber = document.getElementById('payment_number').value;
 
-    // Construire le message WhatsApp avec toutes les réponses
-    var whatsappMessage = '*Session choisie* : ' + session +
-                          '\n*Prix choisi* : ' + price +
-                          '\n*Mode de paiement* : ' + payment +
-                          '\n*Numéro de paiement* : ' + paymentNumber;
+    // Construire le message WhatsApp avec toutes les réponses et l'adresse du moyen de paiement
+    var whatsappMessage = '*Session choisie* :\n' + session +
+                          '\n\n*Prix choisi* :\n' + price +
+                          '\n\n*Mode de paiement* :\n' + payment +
+                          '\n\n*Numéro de paiement* :\n' + paymentNumber +
+                          '\n\n*Adresse du moyen de paiement* :\n' + document.getElementById('payment_address').value;
 
     // Construire le lien WhatsApp avec le message
     var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
