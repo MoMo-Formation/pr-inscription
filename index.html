@@ -122,18 +122,10 @@
                               '\n\n*Prénom* :\n' + prenom +
                               '\n\n*Numéro WhatsApp* :\n' + whatsapp;
 
-      // Numéro WhatsApp
-      var whatsappNumber = "+22601368949";
-
-      // Générer le lien WhatsApp avec le message et le numéro
-      var whatsappLink = "https://wa.me/" + whatsappNumber + "?text=" + message;
-
-      // Rediriger vers le lien WhatsApp
-      window.location.href = whatsappLink;
-    }
-
-    // Associer la fonction envoyerWhatsApp au clic sur le bouton
-    document.getElementById("submit-btn").addEventListener("click", envoyerWhatsApp);
+      var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
+        window.open(whatsappLink);
+      });
+    });
   </script>
 </body>
 </html>
