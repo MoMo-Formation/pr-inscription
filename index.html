@@ -98,22 +98,29 @@
     <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn">Retour vers le haut</button>
   </div>
  <script>
-    // Fonction pour envoyer les données du formulaire sur WhatsApp
-    function envoyerWhatsApp() {
-      // Récupérer les valeurs des champs du formulaire
-      var session = document.getElementById("session").value;
-      var price = document.querySelector('input[name="price"]:checked').value;
-      var payment = document.getElementById("payment").value;
-      var paymentAddress = document.getElementById("payment_address").value;
-      var paymentNumber = document.getElementById("payment_number").value;
+    document.addEventListener('DOMContentLoaded', function() {
+      var whatsappBtn = document.getElementById('submit-btn');
+      whatsappBtn.addEventListener('click', function() {
+        var session = document.getElementById('session').value;
+        var price = document.querySelector('input[name="price"]:checked').value;
+        var payment = document.getElementById('payment').value;
+        var paymentNumber = document.getElementById('payment_number').value;
+        var paymentAddress = document.getElementById('payment_address').value;
 
-      // Construire le message WhatsApp avec les données du formulaire
-      var message = "*Préinscription*%0A";
-      message += "%0A*Session*: " + session + "%0A%0A";
-      message += "*Prix*: " + price + "%0A%0A";
-      message += "*Moyen de paiement*: " + payment + "%0A%0A";
-      message += "*Adresse de paiement*: " + paymentAddress + "%0A%0A";
-      message += "*Numéro de téléphone*: " + paymentNumber;
+        // Récupérer les valeurs du nom, prénom et numéro WhatsApp
+        var nom = document.getElementById('nom').value;
+        var prenom = document.getElementById('prenom').value;
+        var whatsapp = document.getElementById('whatsapp').value;
+
+        // Construire le message WhatsApp avec toutes les réponses et les informations personnelles
+        var whatsappMessage = '*Session choisie* :\n' + session +
+                              '\n\n*Prix choisi* :\n' + price +
+                              '\n\n*Mode de paiement* :\n' + payment +
+                              '\n\n*Numéro de paiement* :\n' + paymentNumber +
+                              '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress +
+                              '\n\n*Nom* :\n' + nom +
+                              '\n\n*Prénom* :\n' + prenom +
+                              '\n\n*Numéro WhatsApp* :\n' + whatsapp;
 
       // Numéro WhatsApp
       var whatsappNumber = "+22601368949";
