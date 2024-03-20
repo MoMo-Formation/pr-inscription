@@ -10,9 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var payment = document.getElementById('payment').value;
     var paymentNumber = document.getElementById('payment_number').value;
     var paymentAddress = document.getElementById('payment_address').value;
+    var nom = document.getElementById('nom').value;
+    var prenom = document.getElementById('prenom').value;
+    var whatsapp = document.getElementById('whatsapp').value;
 
     // Construire le message WhatsApp avec toutes les réponses et l'adresse du moyen de paiement
-    var whatsappMessage = '*Session choisie* :\n' + session +
+    var whatsappMessage = '*Préinscription* :\n\n' +
+                          '*Nom* : ' + nom +
+                          '\n*Prénom* : ' + prenom +
+                          '\n*Numéro WhatsApp* : ' + whatsapp +
+                          '\n\n*Session choisie* :\n' + session +
                           '\n\n*Prix choisi* :\n' + price +
                           '\n\n*Mode de paiement* :\n' + payment +
                           '\n\n*Numéro de paiement* :\n' + paymentNumber +
