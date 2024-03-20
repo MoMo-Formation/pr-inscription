@@ -97,3 +97,7 @@ button:hover {
 .scroll-top-btn:hover {
   background-color: #45a049; /* Couleur de fond au survol */
 }
+/* Style de la section "Choix du prix" */
+#price-section {
+  margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
+}
