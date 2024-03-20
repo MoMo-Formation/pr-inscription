@@ -1,4 +1,3 @@
-```css
 /* Réinitialisation des styles par défaut */
 * {
   margin: 0;
@@ -26,6 +25,7 @@ body {
 h1 {
   text-align: center; /* Centrage du texte */
   margin-bottom: 20px; /* Marge basse pour séparer du formulaire */
+  font-weight: bold; /* Texte en gras */
 }
 
 /* Style des étiquettes des champs de formulaire */
@@ -71,15 +71,7 @@ button:hover {
 }
 
 /* Style du titre du programme de formation */
-.formation-program h2 {
-  text-align: left; /* Alignement à gauche */
-  margin-left: -20px; /* Marge négative pour compenser la marge du conteneur */
-  margin-right: -20px; /* Marge négative pour compenser la marge du conteneur */
-  padding: 10px; /* Remplissage intérieur */
-  background-color: #f4f4f4; /* Couleur de fond */
-}
-
-/* Style du titre de l'attestation */
+.formation-program h2,
 .attestation-title {
   text-align: left; /* Alignement à gauche */
   margin-left: -20px; /* Marge négative pour compenser la marge du conteneur */
@@ -105,4 +97,3 @@ button:hover {
 .scroll-top-btn:hover {
   background-color: #45a049; /* Couleur de fond au survol */
 }
-```
