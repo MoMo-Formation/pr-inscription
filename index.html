@@ -88,5 +88,37 @@
     <!-- Bouton de retour vers le haut -->
     <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn">Retour vers le haut</button>
   </div>
+  <script>
+  // Fonction pour envoyer les données du formulaire sur WhatsApp
+  function envoyerWhatsApp() {
+    // Récupérer les valeurs des champs du formulaire
+    var session = document.getElementById("session").value;
+    var price = document.querySelector('input[name="price"]:checked').value;
+    var payment = document.getElementById("payment").value;
+    var paymentAddress = document.getElementById("payment_address").value;
+    var paymentNumber = document.getElementById("payment_number").value;
+
+    // Construire le message WhatsApp avec les données du formulaire
+    var message = "Préinscription%0A";
+    message += "Session: " + session + "%0A";
+    message += "Prix: " + price + "%0A";
+    message += "Moyen de paiement: " + payment + "%0A";
+    message += "Adresse de paiement: " + paymentAddress + "%0A";
+    message += "Numéro de téléphone: " + paymentNumber;
+
+    // Numéro WhatsApp
+    var whatsappNumber = "+22601368949";
+
+    // Générer le lien WhatsApp avec le message et le numéro
+    var whatsappLink = "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+    // Rediriger vers le lien WhatsApp
+    window.location.href = whatsappLink;
+  }
+
+  // Associer la fonction envoyerWhatsApp au clic sur le bouton
+  document.getElementById("submit-btn").addEventListener("click", envoyerWhatsApp);
+</script>
+
 </body>
 </html>
