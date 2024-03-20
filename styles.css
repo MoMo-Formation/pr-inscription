@@ -1,3 +1,4 @@
+```css
 /* Réinitialisation des styles par défaut */
 * {
   margin: 0;
@@ -103,4 +104,5 @@ button:hover {
 /* Style du survol du bouton de retour vers le haut */
 .scroll-top-btn:hover {
   background-color: #45a049; /* Couleur de fond au survol */
-  }
+}
+```
