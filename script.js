@@ -15,18 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
     var whatsapp = document.getElementById('whatsapp').value;
 
     // Construire le message WhatsApp avec toutes les réponses et l'adresse du moyen de paiement
-    var whatsappMessage = '*Préinscription* :\n\n' +
+    var whatsappMessage = '*Préinscription* :\\n\\n' +
                           '*Nom* : ' + nom +
-                          '\n*Prénom* : ' + prenom +
-                          '\n*Numéro WhatsApp* : ' + whatsapp +
-                          '\n\n*Session choisie* :\n' + session +
-                          '\n\n*Prix choisi* :\n' + price +
-                          '\n\n*Mode de paiement* :\n' + payment +
-                          '\n\n*Numéro de paiement* :\n' + paymentNumber +
-                          '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
+                          '\\n*Prénom* : ' + prenom +
+                          '\\n*Numéro WhatsApp* : ' + whatsapp +
+                          '\\n\\n*Session choisie* :\\n' + session +
+                          '\\n\\n*Prix choisi* :\\n' + price +
+                          '\\n\\n*Mode de paiement* :\\n' + payment +
+                          '\\n\\n*Numéro de paiement* :\\n' + paymentNumber +
+                          '\\n\\n*Adresse du moyen de paiement* :\\n' + paymentAddress;
 
     // Construire le lien WhatsApp avec le message
-    var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
+    var whatsappLink = '1' + encodeURIComponent(whatsappMessage);
 
     // Ouvrir le lien WhatsApp dans une nouvelle fenêtre
     window.open(whatsappLink);
