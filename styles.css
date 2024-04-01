@@ -88,9 +88,8 @@ button:hover {
   background-color: #5cb85c; /* Couleur de fond */
   color: white; /* Couleur du texte */
   border: none; /* Pas de bordure */
-  border-radius: 50%; /* Coins arrondis pour rendre le bouton rond */
-  width: 50px; /* Largeur du bouton */
-  height: 50px; /* Hauteur du bouton */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px 20px; /* Remplissage intérieur */
   cursor: pointer; /* Curseur au survol */
 }
 
