@@ -85,10 +85,8 @@ button:hover {
   position: fixed; /* Position fixe */
   bottom: 20px; /* Distance par rapport au bas de l'écran */
   right: 20px; /* Distance par rapport à la droite de l'écran */
-  background-color: #5cb85c; /* Couleur de fond */
-  color: white; /* Couleur du texte */
+  background-color: transparent; /* Fond transparent */
   border: none; /* Pas de bordure */
-  border-radius: 50%; /* Coins arrondis pour rendre le bouton rond */
   width: 50px; /* Largeur du bouton */
   height: 50px; /* Hauteur du bouton */
   cursor: pointer; /* Curseur au survol */
@@ -98,7 +96,7 @@ button:hover {
 
 /* Style du survol du bouton de retour vers le haut */
 #scroll-top-btn:hover {
-  background-color: #45a049; /* Couleur de fond au survol */
+  filter: brightness(90%); /* Assombrir légèrement au survol */
 }
 
 
