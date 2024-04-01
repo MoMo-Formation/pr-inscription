@@ -29,25 +29,25 @@
       </div>
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
-      <select id="payment" name="payment">
+      <select id="payment" name="payment" onchange="updatePaymentAddress()">
         <option value="orange_money" selected>Orange Money</option>
         <option value="wave">Wave</option>
         <option value="moov_money">Moov Money</option>
+        <option value="mtn">MTN</option>
         <option value="nita">Nita</option>
-        <option value="express_point">Express Point (Ecobank)</option>
       </select>
 
       <label for="payment_address">Adresse du moyen de paiement :</label>
       <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
 
-      <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-      
-      <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-      
-      <label for="whatsapp">Numéro WhatsApp :</label>
-      <input type="text" id="whatsapp" name="whatsapp" placeholder="Votre numéro WhatsApp" required>
+       <label for="nom">Nom :</label>
+  <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+  
+  <label for="prenom">Prénom :</label>
+  <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+  
+  <label for="whatsapp">Numéro WhatsApp :</label>
+  <input type="text" id="whatsapp" name="whatsapp" placeholder="Votre numéro WhatsApp" required>
 
       <label for="payment_number">Numéro utilisé pour le paiement :</label>
       <input type="text" id="payment_number" name="payment_number" placeholder="Numéro de téléphone">
@@ -84,7 +84,7 @@
 
         Rejoignez-nous pour trois jours d'apprentissage intensif ! 🌱✨ Pour toute question ou ajustement, n'hésitez pas à nous contacter.
       </p>
-    </div>
+          </div>
 
     <!-- Texte "Attestation" -->
     <h2>Attestation</h2>
@@ -95,37 +95,10 @@
     </div>
 
     <!-- Bouton de retour vers le haut -->
-    <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn">Retour vers le haut</button>
+    <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn">
+      <img src="Vers le haut.png" alt="Retour vers le haut" class="scroll-top-icon">
+    </button>
   </div>
- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var whatsappBtn = document.getElementById('submit-btn');
-      whatsappBtn.addEventListener('click', function() {
-        var session = document.getElementById('session').value;
-        var price = document.querySelector('input[name="price"]:checked').value;
-        var payment = document.getElementById('payment').value;
-        var paymentNumber = document.getElementById('payment_number').value;
-        var paymentAddress = document.getElementById('payment_address').value;
-
-        // Récupérer les valeurs du nom, prénom et numéro WhatsApp
-        var nom = document.getElementById('nom').value;
-        var prenom = document.getElementById('prenom').value;
-        var whatsapp = document.getElementById('whatsapp').value;
-
-        // Construire le message WhatsApp avec toutes les réponses et les informations personnelles
-        var whatsappMessage = '*Session choisie* :\n' + session +
-                              '\n\n*Prix choisi* :\n' + price +
-                              '\n\n*Mode de paiement* :\n' + payment +
-                              '\n\n*Numéro de paiement* :\n' + paymentNumber +
-                              '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress +
-                              '\n\n*Nom* :\n' + nom +
-                              '\n\n*Prénom* :\n' + prenom +
-                              '\n\n*Numéro WhatsApp* :\n' + whatsapp;
-
-      var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
-        window.open(whatsappLink);
-      });
-    });
-  </script>
+ <script src="script.js"></script>
 </body>
 </html>
