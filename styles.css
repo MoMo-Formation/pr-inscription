@@ -83,20 +83,24 @@ button:hover {
 /* Style du bouton de retour vers le haut */
 #scroll-top-btn {
   position: fixed; /* Position fixe */
-  bottom: 20px; /* Distance par rapport au bas de la fenêtre */
-  right: 20px; /* Distance par rapport à la droite de la fenêtre */
+  bottom: 20px; /* Distance par rapport au bas de l'écran */
+  right: 20px; /* Distance par rapport à la droite de l'écran */
   background-color: #5cb85c; /* Couleur de fond */
   color: white; /* Couleur du texte */
   border: none; /* Pas de bordure */
-  border-radius: 5px; /* Coins arrondis */
-  padding: 10px 20px; /* Remplissage intérieur */
+  border-radius: 50%; /* Coins arrondis pour rendre le bouton rond */
+  width: 50px; /* Largeur du bouton */
+  height: 50px; /* Hauteur du bouton */
   cursor: pointer; /* Curseur au survol */
+  background-image: url('Vers le haut.png'); /* Image de fond */
+  background-size: cover; /* Redimensionner l'image pour remplir complètement le bouton */
 }
 
 /* Style du survol du bouton de retour vers le haut */
 #scroll-top-btn:hover {
   background-color: #45a049; /* Couleur de fond au survol */
 }
+
 
 /* Style de la section "Choix du prix" */
 #price-section {
