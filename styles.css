@@ -1,3 +1,26 @@
+/* Style de l'image de l'attestation */
+.attestation img {
+  max-width: 100%; /* Largeur maximale de l'image */
+  height: auto; /* Hauteur automatique pour conserver les proportions */
+  display: block; /* Empêche l'image de déborder de son conteneur */
+  margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+/* Style de la section "Choix du prix" */
+#price-section {
+  margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
+}
+
+/* Style de la section des moyens de paiement */
+.payment-options {
+  margin-top: 20px; /* Ajoute une marge haute de 20 pixels */
+}
+
+/* Style de chaque option de paiement */
+.payment-option {
+  margin-bottom: 10px; /* Ajoute une marge basse de 10 pixels entre chaque option */
+}
+
 /* Style du bouton de retour vers le haut */
 .scroll-top-btn {
   position: fixed; /* Position fixe */
