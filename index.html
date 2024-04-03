@@ -106,5 +106,26 @@
    <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn"><img src="Vers le haut.png" alt="Vers le haut"></button>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function sendWhatsAppMessage() {
+            var session = document.getElementById('session').value;
+            var price = document.querySelector('input[name="price"]:checked').value;
+            var payment = document.getElementById('payment').value;
+            var nom = document.getElementById('nom').value;
+            var prenom = document.getElementById('prenom').value;
+            var whatsapp = document.getElementById('whatsapp').value;
+
+            var whatsappMessage = '*Préinscription* :\\n\\n' +
+                                  '*Nom* : ' + nom +
+                                  '\\n*Prénom* : ' + prenom +
+                                  '\\n*Numéro WhatsApp* : ' + whatsapp +
+                                  '\\n\\n*Session choisie* :\\n' + session +
+                                  '\\n\\n*Prix choisi* :\\n' + price +
+                                  '\\n\\n*Mode de paiement* :\\n' + payment;
+
+            var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
+            window.open(whatsappLink);
+        }
+    </script>
 </body>
 </html>
