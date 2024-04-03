@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
   var whatsappBtn = document.getElementById('submit-btn');
-  whatsappBtn.addEventListener('click', function() {
-    var session = document.getElementById('session').value;
-    var price = document.querySelector('input[name="price"]:checked').value;
-    var payment = document.getElementById('payment').value;
-    var paymentNumber = document.getElementById('payment_number').value;
-    var nom = document.getElementById('nom').value;
-    var prenom = document.getElementById('prenom').value;
-    var whatsapp = document.getElementById('whatsapp').value;
 
+  // Ajouter un gestionnaire d'événements de changement au sélecteur de moyen de paiement
+  document.getElementById('payment').addEventListener('change', function() {
+    updatePaymentAddress();
+  });
+
+  // Fonction pour mettre à jour l'adresse du moyen de paiement
+  function updatePaymentAddress() {
+    var payment = document.getElementById('payment').value;
     var paymentAddressText;
 
     // Déterminer l'adresse du moyen de paiement en fonction du choix
@@ -36,6 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
     }
 
+    // Mettre à jour le texte de l'adresse du moyen de paiement
+    document.getElementById('payment_address').value = paymentAddressText;
+  }
+
+  // Appeler la fonction updatePaymentAddress au chargement de la page pour initialiser l'adresse du moyen de paiement
+  updatePaymentAddress();
+
+  // Ajouter un gestionnaire d'événements au clic sur le bouton d'envoi
+  whatsappBtn.addEventListener('click', function() {
+    var session = document.getElementById('session').value;
+    var price = document.querySelector('input[name="price"]:checked').value;
+    var payment = document.getElementById('payment').value;
+    var paymentNumber = document.getElementById('payment_number').value;
+    var paymentAddress = document.getElementById('payment_address').value;
+    var nom = document.getElementById('nom').value;
+    var prenom = document.getElementById('prenom').value;
+    var whatsapp = document.getElementById('whatsapp').value;
+
     var whatsappMessage = '*Préinscription* :\\n\\n' +
                           '*Nom* : ' + nom +
                           '\\n*Prénom* : ' + prenom +
@@ -44,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           '\\n\\n*Prix choisi* :\\n' + price +
                           '\\n\\n*Mode de paiement* :\\n' + payment +
                           '\\n\\n*Numéro de paiement* :\\n' + paymentNumber +
-                          '\\n\\n*Adresse du moyen de paiement* :\\n' + paymentAddressText;
+                          '\\n\\n*Adresse du moyen de paiement* :\\n' + paymentAddress;
 
     var whatsappLink = '1' + encodeURIComponent(whatsappMessage);
     window.open(whatsappLink);
