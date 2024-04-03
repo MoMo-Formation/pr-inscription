@@ -1,10 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Identifier le bouton WhatsApp
   var whatsappBtn = document.getElementById('submit-btn');
-
-  // Ajouter un écouteur d'événements au clic sur le bouton
   whatsappBtn.addEventListener('click', function() {
-    // Récupérer les valeurs des champs de formulaire
     var session = document.getElementById('session').value;
     var price = document.querySelector('input[name="price"]:checked').value;
     var payment = document.getElementById('payment').value;
@@ -14,21 +10,48 @@ document.addEventListener('DOMContentLoaded', function() {
     var prenom = document.getElementById('prenom').value;
     var whatsapp = document.getElementById('whatsapp').value;
 
-    // Construire le message WhatsApp avec toutes les réponses et l'adresse du moyen de paiement
-    var whatsappMessage = '*Préinscription* :\n\n' +
-                          '*Nom* : ' + nom +
-                          '\n*Prénom* : ' + prenom +
-                          '\n*Numéro WhatsApp* : ' + whatsapp +
-                          '\n\n*Session choisie* :\n' + session +
+    // Mettre à jour l'adresse de paiement en fonction du moyen de paiement sélectionné
+    if (payment === 'orange_money') {
+      paymentAddress = '+22657547436 (Wend Lassida Ismael Moise Compaore)';
+    } else if (payment === 'wave') {
+      paymentAddress = '+22657547436';
+    } else if (payment === 'moov_money') {
+      paymentAddress = '+22601368949 (Moise Compaoré)';
+    } else if (payment === 'mtn') {
+      paymentAddress = '+22657547436 (Orange Burkina)';
+    } else if (payment === 'nita') {
+      paymentAddress = 'Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré';
+    }
+
+    var whatsappMessage = '*Session choisie* :\n' + session +
                           '\n\n*Prix choisi* :\n' + price +
                           '\n\n*Mode de paiement* :\n' + payment +
                           '\n\n*Numéro de paiement* :\n' + paymentNumber +
-                          '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
+                          '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress +
+                          '\n\n*Nom* :\n' + nom +
+                          '\n\n*Prénom* :\n' + prenom +
+                          '\n\n*Numéro WhatsApp* :\n' + whatsapp;
 
-    // Construire le lien WhatsApp avec le message
     var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
-
-    // Ouvrir le lien WhatsApp dans une nouvelle fenêtre
     window.open(whatsappLink);
   });
 });
+
+// Fonction pour mettre à jour l'adresse de paiement
+function updatePaymentAddress() {
+  var payment = document.getElementById('payment').value;
+  var paymentAddressInput = document.getElementById('payment_address');
+  var defaultAddress = '+22657547436 (Wend Lassida Ismael Moise Compaore)';
+  
+  if (payment === 'orange_money') {
+    paymentAddressInput.value = defaultAddress;
+  } else if (payment === 'wave') {
+    paymentAddressInput.value = '+22657547436';
+  } else if (payment === 'moov_money') {
+    paymentAddressInput.value = '+22601368949 (Moise Compaoré)';
+  } else if (payment === 'mtn') {
+    paymentAddressInput.value = '+22657547436 (Orange Burkina)';
+  } else if (payment === 'nita') {
+    paymentAddressInput.value = 'Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré';
+  }
+}
