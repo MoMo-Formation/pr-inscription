@@ -26,11 +26,19 @@ h1 {
   text-align: center; /* Centrage du texte */
   margin-bottom: 20px; /* Marge basse pour séparer du formulaire */
   font-weight: bold; /* Texte en gras */
+  display: flex; /* Utiliser Flexbox pour aligner les éléments */
+  align-items: center; /* Aligner verticalement les éléments */
 }
 
 /* Style des étiquettes des champs de formulaire */
 label {
   font-weight: bold; /* Texte en gras */
+}
+
+/* Style du logo */
+#logo {
+  margin-left: 10px; /* Marge à gauche pour séparer du titre */
+  height: 50px; /* Taille du logo */
 }
 
 /* Style des champs de formulaire */
