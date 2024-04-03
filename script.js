@@ -37,21 +37,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Fonction pour mettre à jour l'adresse de paiement
+// Fonction pour mettre à jour l'adresse du moyen de paiement
 function updatePaymentAddress() {
-  var payment = document.getElementById('payment').value;
+  var paymentMethod = document.getElementById('payment').value;
   var paymentAddressInput = document.getElementById('payment_address');
-  var defaultAddress = '+22657547436 (Wend Lassida Ismael Moise Compaore)';
-  
-  if (payment === 'orange_money') {
-    paymentAddressInput.value = defaultAddress;
-  } else if (payment === 'wave') {
-    paymentAddressInput.value = '+22657547436';
-  } else if (payment === 'moov_money') {
-    paymentAddressInput.value = '+22601368949 (Moise Compaoré)';
-  } else if (payment === 'mtn') {
-    paymentAddressInput.value = '+22657547436 (Orange Burkina)';
-  } else if (payment === 'nita') {
-    paymentAddressInput.value = 'Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré';
+
+  switch (paymentMethod) {
+    case 'orange_money':
+      paymentAddressInput.value = "+22657547436 (Wend Lassida Ismael Moise Compaore)";
+      break;
+    case 'wave':
+      paymentAddressInput.value = "+22657547436";
+      break;
+    case 'moov_money':
+      paymentAddressInput.value = "+22601368949 (Moise Compaore)";
+      break;
+    case 'mtn':
+      paymentAddressInput.value = "+22657547436 (Orange Burkina)";
+      break;
+    case 'nita':
+      paymentAddressInput.value = "Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré";
+      break;
+    default:
+      paymentAddressInput.value = ""; // Efface l'adresse si aucune option n'est sélectionnée
+      break;
   }
 }
+
+// Ajout d'un écouteur d'événement pour mettre à jour l'adresse du moyen de paiement lorsqu'une nouvelle option est sélectionnée
+document.getElementById('payment').addEventListener('change', updatePaymentAddress);
