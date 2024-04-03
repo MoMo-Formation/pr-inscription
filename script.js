@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var price = document.querySelector('input[name="price"]:checked').value;
     var payment = document.getElementById('payment').value;
     var paymentNumber = document.getElementById('payment_number').value;
-    var paymentAddress = document.getElementById('payment_address').value;
     var nom = document.getElementById('nom').value;
     var prenom = document.getElementById('prenom').value;
     var whatsapp = document.getElementById('whatsapp').value;
@@ -15,19 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Déterminer l'adresse du moyen de paiement en fonction du choix
     switch (payment) {
       case 'orange_money':
-        paymentAddressText = '+22657547436 (Orange Burkina)';
+        paymentAddressText = '+22657547436 (Orange Burkina, Wend Lassida Ismaêl Moïse Compaoré)';
         break;
       case 'wave':
-        paymentAddressText = '+22657547436';
+        paymentAddressText = '+22657547436 (Wend Lassida Ismaêl Moïse Compaoré)';
         break;
       case 'moov_money':
-        paymentAddressText = '+22601368949 (Moise Compaoré)';
+        paymentAddressText = '+22601368949 (Wend Lassida Ismaêl Moïse Compaoré)';
+        break;
+      case 'moov_money_flooz':
+        paymentAddressText = '+22601368949 (Moov Burkina, Wend Lassida Ismaêl Moïse Compaoré)';
         break;
       case 'mtn':
-        paymentAddressText = '+22657547436 (Orange Burkina)';
+        paymentAddressText = '+22657547436 (Orange Burkina, Wend Lassida Ismaêl Moïse Compaoré)';
         break;
       case 'nita':
-        paymentAddressText = 'Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré';
+        paymentAddressText = 'Burkina Faso, Bobo-Dioulasso, à Moïse Compaoré au +22657547436';
         break;
       default:
         paymentAddressText = 'Adresse de paiement par défaut';
