@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var prenom = document.getElementById('prenom').value;
     var whatsapp = document.getElementById('whatsapp').value;
 
-    // Générer le message WhatsApp avec les informations du formulaire
     var whatsappMessage = '*Préinscription* :\\n\\n' +
                           '*Nom* : ' + nom +
                           '\\n*Prénom* : ' + prenom +
@@ -65,10 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           '\\n\\n*Numéro de paiement* :\\n' + paymentNumber +
                           '\\n\\n*Adresse du moyen de paiement* :\\n' + paymentAddress;
 
-    // Générer le lien WhatsApp avec le message
     var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
-
-    // Rediriger l'utilisateur vers le lien WhatsApp
-    window.location.href = whatsappLink;
+    window.open(whatsappLink);
   });
 });
