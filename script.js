@@ -43,28 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
   // Appeler la fonction updatePaymentAddress au chargement de la page pour initialiser l'adresse du moyen de paiement
   updatePaymentAddress();
 
-  // Ajouter un gestionnaire d'événements au clic sur le bouton d'envoi
-  whatsappBtn.addEventListener('click', function() {
+  // Fonction pour envoyer le message WhatsApp
+  function sendWhatsAppMessage() {
     var session = document.getElementById('session').value;
     var price = document.querySelector('input[name="price"]:checked').value;
     var payment = document.getElementById('payment').value;
-    var paymentNumber = document.getElementById('payment_number').value;
-    var paymentAddress = document.getElementById('payment_address').value;
     var nom = document.getElementById('nom').value;
     var prenom = document.getElementById('prenom').value;
     var whatsapp = document.getElementById('whatsapp').value;
+    var paymentAddress = document.getElementById('payment_address').value;
 
-    var whatsappMessage = '*Préinscription* :\\n\\n' +
+    var whatsappMessage = '*Préinscription* :\n\n' +
                           '*Nom* : ' + nom +
-                          '\\n*Prénom* : ' + prenom +
-                          '\\n*Numéro WhatsApp* : ' + whatsapp +
-                          '\\n\\n*Session choisie* :\\n' + session +
-                          '\\n\\n*Prix choisi* :\\n' + price +
-                          '\\n\\n*Mode de paiement* :\\n' + payment +
-                          '\\n\\n*Numéro de paiement* :\\n' + paymentNumber +
-                          '\\n\\n*Adresse du moyen de paiement* :\\n' + paymentAddress;
+                          '\n*Prénom* : ' + prenom +
+                          '\n*Numéro WhatsApp* : ' + whatsapp +
+                          '\n\n*Session choisie* :\n' + session +
+                          '\n\n*Prix choisi* :\n' + price +
+                          '\n\n*Mode de paiement* :\n' + payment +
+                          '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
 
     var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
     window.open(whatsappLink);
-  });
+  }
+
+  // Ajouter un gestionnaire d'événements au clic sur le bouton d'envoi
+  whatsappBtn.addEventListener('click', sendWhatsAppMessage);
 });
