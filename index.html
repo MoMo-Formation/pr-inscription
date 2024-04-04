@@ -15,7 +15,7 @@
       <!-- Vos champs de formulaire ici -->
       <label for="session">À quelle session souhaitez-vous participer ?</label>
       <select id="session" name="session">
-        <option value="session_unique">La session du Lundi 8 Avril au Mercredi 10 Avril 2024</option>
+        <option value="session_unique">La session du vendredi 22 mars au dimanche 24 mars 2024</option>
       </select>
 
       <!-- Section des choix de prix -->
@@ -71,8 +71,8 @@
         <strong>Jour 1 : Introduction à la Transformation des Fruits</strong><br>
         - 🕒 20h00 : Accueil et Présentation<br>
         - 🍎 Session 1 : Les Fondamentaux des Jus de Fruits<br>
-        - 🍇 Session 2 : Conservation des Fruits et Jus<br>
-        - 🌳 Session 3 : Techniques d'Extraction et de Mélange<br><br>
+        - 🍇 Session 2 : Techniques d'Extraction et de Mélange<br>
+        - 🌳 Session 3 : Conservation des Fruits et Jus<br><br>
 
         <strong>Jour 2 : Approfondissement des Techniques</strong><br>
         - 🕒 20h00 : Session Récapitulative<br>
@@ -106,26 +106,5 @@
    <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn"><img src="Vers le haut.png" alt="Vers le haut"></button>
     </footer>
     <script src="script.js"></script>
-    <script>
-        function sendWhatsAppMessage() {
-            var session = document.getElementById('session').value;
-            var price = document.querySelector('input[name="price"]:checked').value;
-            var payment = document.getElementById('payment').value;
-            var nom = document.getElementById('nom').value;
-            var prenom = document.getElementById('prenom').value;
-            var whatsapp = document.getElementById('whatsapp').value;
-
-            var whatsappMessage = '*Préinscription* :\\n\\n' +
-                                  '*Nom* : ' + nom +
-                                  '\\n*Prénom* : ' + prenom +
-                                  '\\n*Numéro WhatsApp* : ' + whatsapp +
-                                  '\\n\\n*Session choisie* :\\n' + session +
-                                  '\\n\\n*Prix choisi* :\\n' + price +
-                                  '\\n\\n*Mode de paiement* :\\n' + payment;
-
-            var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
-            window.open(whatsappLink);
-        }
-    </script>
 </body>
 </html>
