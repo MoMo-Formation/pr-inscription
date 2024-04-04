@@ -46,19 +46,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Fonction pour envoyer le message WhatsApp
   function sendWhatsAppMessage() {
     var session = document.getElementById('session').value;
-    var price = document.querySelector('input[name="price"]:checked').value;
+    var price = document.querySelector('input[name="price"]:checked');
     var payment = document.getElementById('payment').value;
     var nom = document.getElementById('nom').value;
     var prenom = document.getElementById('prenom').value;
     var whatsapp = document.getElementById('whatsapp').value;
     var paymentAddress = document.getElementById('payment_address').value;
 
+    if (!session || !price || !payment || !nom || !prenom || !whatsapp || !paymentAddress) {
+      alert('Veuillez remplir tous les champs du formulaire.');
+      return;
+    }
+
+    var priceValue = price.value;
+
     var whatsappMessage = '*Préinscription* :\n\n' +
                           '*Nom* : ' + nom +
                           '\n*Prénom* : ' + prenom +
                           '\n*Numéro WhatsApp* : ' + whatsapp +
                           '\n\n*Session choisie* :\n' + session +
-                          '\n\n*Prix choisi* :\n' + price +
+                          '\n\n*Prix choisi* :\n' + priceValue +
                           '\n\n*Mode de paiement* :\n' + payment +
                           '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
 
