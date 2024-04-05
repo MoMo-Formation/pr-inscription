@@ -1,3 +1,8 @@
+// Ajouter un gestionnaire d'événements au clic sur le bouton d'envoi
+document.getElementById('submit-btn').addEventListener('click', function() {
+  sendWhatsAppMessage();
+});
+
 // Fonction pour envoyer le message WhatsApp
 function sendWhatsAppMessage() {
   // Récupérer les valeurs de tous les champs du formulaire
