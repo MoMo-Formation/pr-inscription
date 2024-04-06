@@ -1,4 +1,4 @@
-// Fonction pour envoyer le message WhatsApp
+//// Fonction pour envoyer le message WhatsApp
 function sendWhatsAppMessage() {
   // Récupérer les valeurs de tous les champs du formulaire
   var session = document.getElementById('session').value;
