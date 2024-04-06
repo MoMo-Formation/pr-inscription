@@ -23,5 +23,5 @@ function sendWhatsAppMessage() {
   var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
 
   // Ouvrir une nouvelle fenêtre pour envoyer le message WhatsApp
-  window.open(whatsappLink);
+  window.open(whatsappLink, '_blank'); // Ajout du deuxième argument '_blank' pour ouvrir dans une nouvelle fenêtre
 }
