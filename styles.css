@@ -35,12 +35,6 @@ label {
   font-weight: bold; /* Texte en gras */
 }
 
-/* Style du logo */
-#logo {
-  margin-left: 10px; /* Marge à gauche pour séparer du titre */
-  height: 50px; /* Taille du logo */
-}
-
 /* Style des champs de formulaire */
 select,
 input[type="text"],
@@ -76,16 +70,6 @@ button:hover {
 .attestation img {
   max-width: 100%; /* Largeur maximale de l'image */
   height: auto; /* Hauteur automatique pour conserver les proportions */
-}
-
-/* Style du titre du programme de formation */
-.formation-program h2,
-.attestation-title {
-  text-align: left; /* Alignement à gauche */
-  margin-left: -20px; /* Marge négative pour compenser la marge du conteneur */
-  margin-right: -20px; /* Marge négative pour compenser la marge du conteneur */
-  padding: 10px; /* Remplissage intérieur */
-  background-color: #f4f4f4; /* Couleur de fond */
 }
 
 /* Style du bouton de retour vers le haut */
