@@ -101,3 +101,14 @@ button:hover {
 #price-section {
   margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
 }
+
+/* Style du logo */
+#logo {
+  height: 1em; /* Taille du logo basée sur la taille du texte */
+  margin-left: 10px; /* Marge à gauche pour séparer du titre */
+}
+
+/* Style du champ d'adresse du moyen de paiement */
+#payment_address {
+  width: calc(100% - 20px); /* Largeur du champ moins la marge intérieure */
+}
