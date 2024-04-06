@@ -20,7 +20,7 @@ function sendWhatsAppMessage() {
                         '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress;
 
   // Créer le lien WhatsApp avec le message pré-rempli
-  var whatsappLink = 'https://wa.me/message/DJNWKADUL744A1?text=' + encodeURIComponent(whatsappMessage);
+  var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
 
   // Ouvrir une nouvelle fenêtre pour envoyer le message WhatsApp
   window.open(whatsappLink, '_blank'); // Ajout du deuxième argument '_blank' pour ouvrir dans une nouvelle fenêtre
