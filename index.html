@@ -4,12 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de Préinscription</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Réinitialisation des styles par défaut */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style du corps de la page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4; /* Couleur de fond */
+    }
+
+    /* Style du conteneur principal */
+    .container {
+      max-width: 600px; /* Largeur maximale du conteneur */
+      margin: 50px auto; /* Marge extérieure pour centrer le conteneur */
+      padding: 20px;
+      background-color: #fff; /* Couleur de fond du conteneur */
+      border-radius: 10px; /* Coins arrondis */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    }
+
+    /* Style du titre principal */
+    h1 {
+      text-align: center; /* Centrage du texte */
+      margin-bottom: 20px; /* Marge basse pour séparer du formulaire */
+      font-weight: bold; /* Texte en gras */
+      display: flex; /* Utiliser Flexbox pour aligner les éléments */
+      align-items: center; /* Aligner verticalement les éléments */
+    }
+
+    /* Style des étiquettes des champs de formulaire */
+    label {
+      font-weight: bold; /* Texte en gras */
+    }
+
+    /* Style des champs de formulaire */
+    select,
+    input[type="text"],
+    button {
+      width: 100%; /* Largeur pleine */
+      padding: 10px; /* Remplissage intérieur */
+      margin-bottom: 15px; /* Marge basse */
+      box-sizing: border-box; /* Taille inclut les bordures et le remplissage */
+    }
+
+    /* Style des boutons */
+    button {
+      background-color: #5cb85c; /* Couleur de fond */
+      color: white; /* Couleur du texte */
+      border: none; /* Pas de bordure */
+      border-radius: 5px; /* Coins arrondis */
+      cursor: pointer; /* Curseur au survol */
+    }
+
+    /* Style du survol des boutons */
+    button:hover {
+      background-color: #45a049; /* Couleur de fond au survol */
+    }
+
+    /* Style de la notification */
+    .notification {
+      color: red; /* Couleur du texte */
+      font-style: italic; /* Texte en italique */
+      text-align: center; /* Centrage du texte */
+    }
+
+    /* Style de l'image de l'attestation */
+    .attestation img {
+      max-width: 100%; /* Largeur maximale de l'image */
+      height: auto; /* Hauteur automatique pour conserver les proportions */
+    }
+
+    /* Style du bouton de retour vers le haut */
+    .scroll-top-btn {
+      position: fixed; /* Position fixe */
+      bottom: 20px; /* Distance par rapport au bas */
+      right: 20px; /* Distance par rapport à droite */
+      background-color: #5cb85c; /* Couleur de fond */
+      color: white; /* Couleur du texte */
+      border: none; /* Pas de bordure */
+      border-radius: 50%; /* Coins arrondis */
+      width: 50px; /* Largeur */
+      height: 50px; /* Hauteur */
+      cursor: pointer; /* Curseur au survol */
+    }
+
+    /* Style du survol du bouton de retour vers le haut */
+    .scroll-top-btn:hover {
+      background-color: #45a049; /* Couleur de fond au survol */
+    }
+
+    /* Style de l'image à l'intérieur du bouton */
+    .scroll-top-btn img {
+      width: 100%; /* Ajustement de la largeur */
+      height: auto; /* Hauteur automatique pour conserver les proportions */
+    }
+
+    /* Style de la section "Choix du prix" */
+    #price-section {
+      margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
+    }
+
+    /* Style du logo */
+    #logo {
+      height: 1em; /* Taille du logo basée sur la taille du texte */
+      margin-left: 10px; /* Marge à gauche pour séparer du titre */
+    }
+
+    /* Style du champ d'adresse du moyen de paiement */
+    #payment_address {
+      width: calc(100% - 20px); /* Largeur du champ moins la marge intérieure */
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Formulaire de Préinscription</h1>
-    <img id="logo" src="InShot_20240319_134419112.png" alt="Logo de votre entreprise">
+    <h1>Formulaire de Préinscription <img id="logo" src="InShot_20240319_134419112.png" alt="Logo de votre entreprise"></h1>
     <form id="preinscription-form">
       <!-- Vos champs de formulaire ici -->
       <label for="session">À quelle session souhaitez-vous participer ?</label>
@@ -30,14 +144,15 @@
       </div>
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
-      <select id="payment" name="payment">
-        <option value="orange_money">Orange Money</option>
-        <option value="wave">Wave</option>
-        <option value="moov_money">Moov Money</option>
-        <option value="mtn">MTN</option>
-        <option value="nita">Nita</option>
-        <option value="express_point">Express Point (Ecobank)</option>
-      </select>
+        <select id="payment" name="payment">
+          <option value="orange_money" selected>Orange Money</option>
+          <option value="wave">Wave</option>
+          <option value="moov_money">Moov Money</option>
+          <option value="moov_money_flooz">Moov Money Flooz</option>
+          <option value="mtn">MTN</option>
+          <option value="nita">Nita</option>
+        </select>
+
 
       <label for="payment_address">Adresse du moyen de paiement :</label>
       <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
@@ -98,7 +213,7 @@
 
     <!-- Bouton de retour vers le haut -->
     <button onclick="window.scrollTo(0, 0)" class="scroll-top-btn">
-      <img src="Vers_le_haut.png" alt="Flèche vers le haut">
+      <img src="Vers le haut.png" alt="Flèche vers le haut">
     </button>
   </div>
  <script>
