@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de Préinscription</title>
   <style>
-    /* Styles CSS */
     /* Réinitialisation des styles par défaut */
     * {
       margin: 0;
@@ -156,7 +155,7 @@
 
       <!-- Champ d'adresse du moyen de paiement -->
       <label for="payment_address">Adresse du moyen de paiement :</label>
-      <input type="text" id="payment_address" name="payment_address" readonly>
+      <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
 
       <label for="nom">Nom :</label>
       <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
@@ -178,12 +177,35 @@
     <div class="formation-program">
       <h2>Programme de la formation</h2>
       <p>
-        <!-- Contenu du programme de formation -->
+        <strong>Jour 1 : Introduction à la Transformation des Fruits</strong><br>
+        - 🕒 20h00 : Accueil et Présentation<br>
+        - 🍎 Session 1 : Les Fondamentaux des Jus de Fruits<br>
+        - 🍇 Session 2 : Techniques d'Extraction et de Mélange<br>
+        - 🌳 Session 3 : Conservation des Fruits et Jus<br><br>
+
+        <strong>Jour 2 : Approfondissement des Techniques</strong><br>
+        - 🕒 20h00 : Session Récapitulative<br>
+        - 🍓 Session 4 : Confitures et Sirops<br>
+        - 🍊 Session 5 : Vinification de Fruits<br>
+        - 🍏 Session 6 : Techniques Avancées de Conservation<br><br>
+
+        <strong>Jour 3: Focus sur les Produits Laitiers</strong><br>
+        - 🕒 20h00 : Session Interactive<br>
+        - 🥛 Session 7 : Fabrication de Yaourts et Dèguè<br>
+        - 🍦 Session 8 : Gapal et Autres Produits Laitiers<br>
+        - 🌽 Session 9 : Conservation des Légumes et Jus de Légumes<br><br>
+
+        <strong>Conclusion et Remise des Attestations</strong><br>
+        - ⁉️ Questions et Réponses<br>
+        - 📜 Remise virtuelle des attestations<br><br>
+
+        Rejoignez-nous pour trois jours d'apprentissage intensif ! 🌱✨ Pour toute question ou ajustement, n'hésitez pas à nous contacter.
       </p>
     </div>
 
     <!-- Texte "Attestation" -->
     <h2>Attestation</h2>
+
     <!-- Image de l'attestation -->
     <div class="attestation">
       <img src="1710850487671.png" alt="Attestation de formation">
@@ -194,44 +216,46 @@
       <img src="Vers le haut.png" alt="Flèche vers le haut">
     </button>
   </div>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var paymentSelect = document.getElementById('payment');
       var paymentAddressInput = document.getElementById('payment_address');
-      
-      // Ajouter un écouteur d'événements pour détecter les changements dans la sélection du moyen de paiement
-      paymentSelect.addEventListener('change', function() {
-        var selectedPayment = paymentSelect.value;
-        var address = '';
+      var paymentNumberInput = document.getElementById('payment_number');
 
-        // Remplir l'adresse du moyen de paiement en fonction de la sélection
-        switch (selectedPayment) {
+      // Par défaut, afficher l'adresse du moyen de paiement correspondant au premier moyen de paiement
+      paymentAddressInput.value = "+22657547436 (Wend Lassida Ismael Moise Compaore)";
+
+      // Mettre à jour l'adresse du moyen de paiement en fonction de la sélection
+      paymentSelect.addEventListener('change', function() {
+        switch (paymentSelect.value) {
           case 'orange_money':
-            address = '+22657547436 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "+22657547436 (Wend Lassida Ismael Moise Compaore)";
+            paymentNumberInput.placeholder = "Votre numéro Orange money";
             break;
           case 'wave':
-            address = '+22657547437 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "Adresse pour Wave";
+            paymentNumberInput.placeholder = "Votre numéro Wave";
             break;
           case 'moov_money':
-            address = '+22657547438 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "Adresse pour Moov Money";
+            paymentNumberInput.placeholder = "Votre numéro Moov Money";
             break;
           case 'moov_money_flooz':
-            address = '+22657547439 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "Adresse pour Moov Money Flooz";
+            paymentNumberInput.placeholder = "Votre numéro Moov Money Flooz";
             break;
           case 'mtn':
-            address = '+22657547440 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "Adresse pour MTN";
+            paymentNumberInput.placeholder = "Votre numéro MTN";
             break;
           case 'nita':
-            address = '+22657547441 (Wend Lassida Ismael Moise Compaore)';
+            paymentAddressInput.value = "Adresse pour Nita";
+            paymentNumberInput.placeholder = "Votre numéro Nita";
             break;
           default:
-            address = '';
-            break;
+            paymentAddressInput.value = "Adresse par défaut";
+            paymentNumberInput.placeholder = "Numéro de téléphone";
         }
-
-        // Mettre à jour la valeur de l'adresse du moyen de paiement
-        paymentAddressInput.value = address;
       });
 
       var whatsappBtn = document.getElementById('submit-btn');
