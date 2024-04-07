@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de Préinscription</title>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSMCKGPP7T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DSMCKGPP7T');
-</script>
-   <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSMCKGPP7T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSMCKGPP7T');
+  </script>
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-W5KNTG4G');</script>
   <!-- End Google Tag Manager -->
-  
   <style>
     /* Réinitialisation des styles par défaut */
     * {
@@ -143,30 +141,29 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5KNTG4G"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
   <div class="container">
     <h1>Formulaire de Préinscription <img id="logo" src="InShot_20240319_134419112.png" alt="Logo de votre entreprise"></h1>
     <form id="preinscription-form">
       <!-- Vos champs de formulaire ici -->
       <label for="session">À quelle session souhaitez-vous participer ?</label>
-      <select id="session" name="session">
+      <select id="session" name="session" required>
         <option value="session_unique">La session du Lundi 08 Avril au Mercredi 10 Avril 2024</option>
       </select>
 
       <div id="price-section">
         <label>Choisissez votre prix :</label><br>
         <div>
-          <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked>
+          <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked required>
           <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
         </div>
         <div>
-          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)">
+          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)" required>
           <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
         </div>
       </div>
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
-      <select id="payment" name="payment">
+      <select id="payment" name="payment" required>
         <option value="orange_money" selected>Orange Money</option>
         <option value="wave">Wave</option>
         <option value="moov_money">Moov Money</option>
@@ -177,7 +174,7 @@
 
       <!-- Champ d'adresse du moyen de paiement -->
       <label for="payment_address">Adresse du moyen de paiement :</label>
-      <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly>
+      <input type="text" id="payment_address" name="payment_address" value="+22657547436 (Wend Lassida Ismael Moise Compaore)" readonly required>
 
       <label for="nom">Nom :</label>
       <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
@@ -287,24 +284,26 @@
         var payment = document.getElementById('payment').value;
         var paymentNumber = document.getElementById('payment_number').value;
         var paymentAddress = document.getElementById('payment_address').value;
-
-        // Récupérer les valeurs du nom, prénom et numéro WhatsApp
         var nom = document.getElementById('nom').value;
         var prenom = document.getElementById('prenom').value;
         var whatsapp = document.getElementById('whatsapp').value;
 
-        // Construire le message WhatsApp avec toutes les réponses et les informations personnelles
-        var whatsappMessage = '*Session choisie* :\n' + session +
-                              '\n\n*Prix choisi* :\n' + price +
-                              '\n\n*Mode de paiement* :\n' + payment +
-                              '\n\n*Numéro de paiement* :\n' + paymentNumber +
-                              '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress +
-                              '\n\n*Nom* :\n' + nom +
-                              '\n\n*Prénom* :\n' + prenom +
-                              '\n\n*Numéro WhatsApp* :\n' + whatsapp;
+        // Vérification si tous les champs sont remplis sauf celui du numéro utilisé pour le paiement
+        if (session && price && payment && nom && prenom && whatsapp) {
+          var whatsappMessage = '*Session choisie* :\n' + session +
+                                '\n\n*Prix choisi* :\n' + price +
+                                '\n\n*Mode de paiement* :\n' + payment +
+                                '\n\n*Numéro de paiement* :\n' + paymentNumber +
+                                '\n\n*Adresse du moyen de paiement* :\n' + paymentAddress +
+                                '\n\n*Nom* :\n' + nom +
+                                '\n\n*Prénom* :\n' + prenom +
+                                '\n\n*Numéro WhatsApp* :\n' + whatsapp;
 
-        var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
-        window.open(whatsappLink);
+          var whatsappLink = 'https://wa.me/22601368949?text=' + encodeURIComponent(whatsappMessage);
+          window.open(whatsappLink);
+        } else {
+          alert('Veuillez remplir tous les champs obligatoires.');
+        }
       });
     });
   </script>
