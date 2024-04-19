@@ -147,21 +147,21 @@
       <!-- Vos champs de formulaire ici -->
       <label for="session">À quelle session souhaitez-vous participer ?</label>
       <select id="session" name="session" required>
-        <option value="session_unique">La session du Lundi 22 Avril au Mercredi 24 Avril 2024</option>
-        <option value="session_unique">La session du Jeudi 25 Avril au Samedi 27 Avril 2024</option>
-        <option value="session_unique">La session du Lundi 29 Avril au Mercredi 01 Mai 2024</option>
+        <option value="session_unique">Du Lundi 22 Avril au Mercredi 24 Avril 2024</option>
+        <option value="session_unique">Du Jeudi 25 Avril au Samedi 27 Avril 2024</option>
+        <option value="session_unique">Du Lundi 29 Avril au Mercredi 01 Mai 2024</option>
       </select>
 
       <div id="price-section">
         <label>Choisissez votre prix :</label><br>
         <div>
+          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)" required>
+          <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
+        </div>
           <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked required>
           <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
         </div>
         <div>
-          <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)" required>
-          <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
-        </div>
       </div>
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
