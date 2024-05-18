@@ -27,112 +27,151 @@
       box-sizing: border-box;
     }
 
+    /* Variables CSS pour les thèmes */
+    :root {
+      --bg-color-light: #f4f4f4;
+      --bg-color-dark: #2c2c2c;
+      --text-color-light: #000;
+      --text-color-dark: #fff;
+      --primary-color: #5cb85c;
+      --primary-color-hover: #45a049;
+      --container-bg-color-light: #fff;
+      --container-bg-color-dark: #444;
+      --box-shadow-light: 0 0 10px rgba(0, 0, 0, 0.1);
+      --box-shadow-dark: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Thème clair */
+    body.light-mode {
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+    }
+
+    .light-mode .container {
+      background-color: var(--container-bg-color-light);
+      box-shadow: var(--box-shadow-light);
+    }
+
+    /* Thème sombre */
+    body.dark-mode {
+      background-color: var(--bg-color-dark);
+      color: var(--text-color-dark);
+    }
+
+    .dark-mode .container {
+      background-color: var(--container-bg-color-dark);
+      box-shadow: var(--box-shadow-dark);
+    }
+
     /* Style du corps de la page */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4; /* Couleur de fond */
     }
 
     /* Style du conteneur principal */
     .container {
-      max-width: 600px; /* Largeur maximale du conteneur */
-      margin: 50px auto; /* Marge extérieure pour centrer le conteneur */
+      max-width: 600px;
+      margin: 50px auto;
       padding: 20px;
-      background-color: #fff; /* Couleur de fond du conteneur */
-      border-radius: 10px; /* Coins arrondis */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+      border-radius: 10px;
     }
 
     /* Style du titre principal */
     h1 {
-      text-align: center; /* Centrage du texte */
-      margin-bottom: 20px; /* Marge basse pour séparer du formulaire */
-      font-weight: bold; /* Texte en gras */
-      display: flex; /* Utiliser Flexbox pour aligner les éléments */
-      align-items: center; /* Aligner verticalement les éléments */
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* Style des étiquettes des champs de formulaire */
     label {
-      font-weight: bold; /* Texte en gras */
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     /* Style des champs de formulaire */
     select,
     input[type="text"],
     button {
-      width: 100%; /* Largeur pleine */
-      padding: 10px; /* Remplissage intérieur */
-      margin-bottom: 15px; /* Marge basse */
-      box-sizing: border-box; /* Taille inclut les bordures et le remplissage */
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
     }
 
     /* Style des boutons */
     button {
-      background-color: #5cb85c; /* Couleur de fond */
-      color: white; /* Couleur du texte */
-      border: none; /* Pas de bordure */
-      border-radius: 5px; /* Coins arrondis */
-      cursor: pointer; /* Curseur au survol */
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     /* Style du survol des boutons */
     button:hover {
-      background-color: #45a049; /* Couleur de fond au survol */
+      background-color: var(--primary-color-hover);
     }
 
     /* Style de la notification */
     .notification {
-      color: red; /* Couleur du texte */
-      font-style: italic; /* Texte en italique */
-      text-align: center; /* Centrage du texte */
+      color: red;
+      font-style: italic;
+      text-align: center;
     }
 
     /* Style de l'image de l'attestation */
     .attestation img {
-      max-width: 100%; /* Largeur maximale de l'image */
-      height: auto; /* Hauteur automatique pour conserver les proportions */
+      max-width: 100%;
+      height: auto;
     }
 
     /* Style du bouton de retour vers le haut */
     .scroll-top-btn {
-      position: fixed; /* Position fixe */
-      bottom: 20px; /* Distance par rapport au bas */
-      right: 20px; /* Distance par rapport à droite */
-      background-color: #5cb85c; /* Couleur de fond */
-      color: white; /* Couleur du texte */
-      border: none; /* Pas de bordure */
-      border-radius: 50%; /* Coins arrondis */
-      width: 50px; /* Largeur */
-      height: 50px; /* Hauteur */
-      cursor: pointer; /* Curseur au survol */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
     }
 
     /* Style du survol du bouton de retour vers le haut */
     .scroll-top-btn:hover {
-      background-color: #45a049; /* Couleur de fond au survol */
+      background-color: var(--primary-color-hover);
     }
 
     /* Style de l'image à l'intérieur du bouton */
     .scroll-top-btn img {
-      width: 100%; /* Ajustement de la largeur */
-      height: auto; /* Hauteur automatique pour conserver les proportions */
+      width: 100%;
+      height: auto;
     }
 
     /* Style de la section "Choix du prix" */
     #price-section {
-      margin-bottom: 20px; /* Ajoute une marge basse de 20 pixels */
+      margin-bottom: 20px;
     }
 
     /* Style du logo */
     #logo {
-      height: 1.5em; /* Taille du logo basée sur la taille du texte */
-      margin-left: 10px; /* Marge à gauche pour séparer du titre */
+      height: 1.5em;
+      margin-left: 10px;
     }
 
     /* Style du champ d'adresse du moyen de paiement */
     #payment_address {
-      width: calc(100% - 20px); /* Largeur du champ moins la marge intérieure */
+      width: calc(100% - 20px);
+    }
+
+    /* Style de la formation programme */
+    .formation-program {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -156,10 +195,10 @@
           <input type="radio" id="prix_formation_attestation" name="price" value="Formation + Attestation (5.000 FCFA)" required>
           <label for="prix_formation_attestation">Formation + Attestation (5.000 FCFA)</label><br>
         </div>
+        <div>
           <input type="radio" id="prix_formation_seule" name="price" value="Formation seule (3.000 FCFA)" checked required>
           <label for="prix_formation_seule">Formation seule (3.000 FCFA)</label><br>
         </div>
-        <div>
       </div>
 
       <label for="payment">Quel moyen de paiement souhaitez-vous utiliser ?</label>
@@ -252,23 +291,23 @@
             paymentNumberInput.placeholder = "Votre numéro Orange money";
             break;
           case 'wave':
-            paymentAddressInput.value = "226 57547436 (Wend Lassida Ismael Moise Compaoré)";
+            paymentAddressInput.value = "226 57547436 (Wend Lassida Ismael Moise Compaore)";
             paymentNumberInput.placeholder = "Votre numéro Wave";
             break;
           case 'moov_money':
-            paymentAddressInput.value = "226 01368949 (Compaoré Moïse)";
+            paymentAddressInput.value = "226 01368949 (Compaore Moise)";
             paymentNumberInput.placeholder = "Votre numéro Moov Money";
             break;
           case 'moov_money_flooz':
-            paymentAddressInput.value = "226 57547436 (Moov Burkina, Compaoré Moïse)";
+            paymentAddressInput.value = "226 57547436 (Moov Burkina, Compaore Moise)";
             paymentNumberInput.placeholder = "Votre numéro Moov Money Flooz";
             break;
           case 'mtn':
-            paymentAddressInput.value = "226 57547436 (Orange Burkina, Wend Lassida Ismael Moise Compaoré)";
+            paymentAddressInput.value = "226 57547436 (Orange Burkina, Wend Lassida Ismael Moise Compaore)";
             paymentNumberInput.placeholder = "Votre numéro MTN";
             break;
           case 'nita':
-            paymentAddressInput.value = "226 57547436 (Burkina Faso, Bobo-Dioulasso, Compaoré Moïse)";
+            paymentAddressInput.value = "226 57547436 (Burkina Faso, Bobo-Dioulasso, Compaore Moise)";
             paymentNumberInput.placeholder = "Votre numéro Nita";
             break;
           default:
@@ -305,6 +344,20 @@
           alert('Veuillez remplir tous les champs obligatoires.');
         }
       });
+
+      // Ajouter la détection du thème préféré de l'utilisateur
+      var darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      function applyThemePreference(e) {
+        if (e.matches) {
+          document.body.classList.add('dark-mode');
+          document.body.classList.remove('light-mode');
+        } else {
+          document.body.classList.add('light-mode');
+          document.body.classList.remove('dark-mode');
+        }
+      }
+      darkModeMediaQuery.addEventListener('change', applyThemePreference);
+      applyThemePreference(darkModeMediaQuery);
     });
   </script>
 </body>
